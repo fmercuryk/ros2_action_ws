@@ -15,8 +15,7 @@ int64 reached_number
 # Feedback
 int64 current_number
 
-jerry@Latitude3520:~/Code/ros/ros2_action_ws$ 
+jerry@Latitude3520:~/Code/ros/ros2_action_ws/src$ ros2 pkg create actions_py --build-type ament_python --dependencies rclpy my_robot_interfaces
 
-
-
+jerry@Latitude3520:~/Code/ros/ros2_action_ws/src/actions_py/actions_py$ touch count_until_server.py
 
