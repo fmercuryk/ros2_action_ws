@@ -19,3 +19,9 @@ jerry@Latitude3520:~/Code/ros/ros2_action_ws/src$ ros2 pkg create actions_py --b
 
 jerry@Latitude3520:~/Code/ros/ros2_action_ws/src/actions_py/actions_py$ touch count_until_server.py
 
+jerry@Latitude3520:~/Code/ros/ros2_action_ws/src$ colcon build --packages-select actions_py --symlink-install
+Starting >>> actions_py
+Finished <<< actions_py [1.29s]          
+
+Summary: 1 package finished [1.45s]
+jerry@Latitude3520:~/Code/ros/ros2_action_ws/src$ 

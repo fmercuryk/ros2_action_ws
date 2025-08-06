@@ -41,15 +41,20 @@ class CountUntilServer(Node):
 
         return result
 
-    def main():
-        rclpy.init()
-        node = CountUntilServer()
-        node.get_logger().info("Count Until Server is running")
 
-        try:
-            rclpy.spin(node)
-        except KeyboardInterrupt:
-            node.get_logger().info("Shutting down Count Until Server")
-        finally:
-            node.destroy_node()
-            rclpy.shutdown()
+def main():
+    rclpy.init()
+    node = CountUntilServer()
+    node.get_logger().info("Count Until Server is running")
+
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        node.get_logger().info("Shutting down Count Until Server")
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
+
+
+if __name__ == "__main__":
+    main()
