@@ -48,3 +48,53 @@ jerry@Latitude3520:~/Code/ros/ros2_action_ws/src/my_robot_tut/scripts$ touch cou
 jerry@Latitude3520:~/Code/ros/ros2_action_ws/src/my_robot_tut/scripts$ chmod +x count_until_server.py
 
 
+*************************
+2025/09/19
+https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Creating-an-Action.html
+
+jerry@Latitude3520:~/Code/ros/ros2_action_ws/src$ ros2 pkg create --license Apache-2.0 custom_action_interfaces
+going to create a new package
+package name: custom_action_interfaces
+destination directory: /home/jerry/Code/ros/ros2_action_ws/src
+package format: 3
+version: 0.0.0
+description: TODO: Package description
+maintainer: ['jerry <fmercury@naver.com>']
+licenses: ['Apache-2.0']
+build type: ament_cmake
+dependencies: []
+creating folder ./custom_action_interfaces
+creating ./custom_action_interfaces/package.xml
+creating source and include folder
+creating folder ./custom_action_interfaces/src
+creating folder ./custom_action_interfaces/include/custom_action_interfaces
+creating ./custom_action_interfaces/CMakeLists.txt
+jerry@Latitude3520:~/Code/ros/ros2_action_ws/src$
+
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$ colcon build
+Starting >>> my_robot_interfaces
+Starting >>> custom_action_interfaces
+Starting >>> my_robot_tut
+Finished <<< my_robot_interfaces [0.44s]                                                                             
+Starting >>> actions_py
+Finished <<< my_robot_tut [1.17s]                                                                                  
+Finished <<< actions_py [1.12s]                                                              
+Finished <<< custom_action_interfaces [5.13s]                    
+
+Summary: 4 packages finished [5.27s]
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$ source install/setup.bash
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$ ros2 interface show custom_action_interfaces/action/Fibonacci
+# Goal
+int32 order
+---
+# Result
+int32[] sequence
+---
+# Feedback
+int32 partial_sequence
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$ 
+
+https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Writing-an-Action-Server-Client/Cpp.html
+https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Writing-an-Action-Server-Client/Py.html
+
+
