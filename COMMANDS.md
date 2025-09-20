@@ -102,3 +102,35 @@ https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Writing-an-Action-Server-Cl
 https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Writing-a-Composable-Node.html
 Writing a Composable Node (C++)
 
+
+**************************
+https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-Python.html
+Monitoring for parameter changes (Python)
+
+1.
+ros2 pkg create --build-type ament_python --license Apache-2.0 python_parameter_event_handler --dependencies rclpy
+
+2.
+rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y
+
+3.
+colcon build --packages-select python_parameter_event_handler
+
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$ rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y
+/usr/bin/rosdep:6: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import load_entry_point
+ERROR: the following packages/stacks could not have their rosdep keys resolved
+to system dependencies:
+my_robot_tut: Cannot locate rosdep definition for [roscpp]
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$ colcon build --packages-select python_parameter_event_handler
+Starting >>> python_parameter_event_handler
+Finished <<< python_parameter_event_handler [1.08s]          
+
+Summary: 1 package finished [1.22s]
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$ . install/setup.bash
+
+4.
+. install/setup.bash
+
+5.
+ros2 run python_parameter_event_handler node_with_parameters
