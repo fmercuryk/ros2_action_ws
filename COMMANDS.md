@@ -134,3 +134,58 @@ jerry@Latitude3520:~/Code/ros/ros2_action_ws$ . install/setup.bash
 
 5.
 ros2 run python_parameter_event_handler node_with_parameters
+
+***************************
+https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Launch/Creating-Launch-Files.html
+
+1.
+cd launch
+
+2.
+ros2 launch turtlesim_mimic_launch.py
+
+3.
+ros2 topic pub -r 1 /turtlesim1/turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: -1.8}}"
+
+4.
+ros2 run rqt_graph rqt_graph
+
+
+***************************
+https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Launch/Launch-system.html
+
+1.
+ros2 pkg create --build-type ament_python --license Apache-2.0 py_launch_example
+
+2.
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$ colcon build --packages-select py_launch_example
+Starting >>> py_launch_example
+Finished <<< py_launch_example [1.07s]          
+
+Summary: 1 package finished [1.21s]
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$ 
+
+3.
+ros2 launch py_launch_example my_script_launch.py
+
+4.
+ros2 launch py_launch_example example_main_launch.py
+
+5.
+ros2 launch py_launch_example example_substitutions_launch.py --show-args
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$ ros2 launch py_launch_example example_substitutions_launch.py --show-args
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'turtlesim_ns':
+        no description given
+        (default: 'turtlesim1')
+
+    'use_provided_red':
+        no description given
+        (default: 'False')
+
+    'new_background_r':
+        no description given
+        (default: '200')
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$
+
