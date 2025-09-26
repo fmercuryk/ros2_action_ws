@@ -168,11 +168,15 @@ jerry@Latitude3520:~/Code/ros/ros2_action_ws$
 3.
 ros2 launch py_launch_example my_script_launch.py
 
-4.
+***************************
+https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Launch/Using-Substitutions.html
+
+1.
 ros2 launch py_launch_example example_main_launch.py
 
-5.
+2.
 ros2 launch py_launch_example example_substitutions_launch.py --show-args
+
 jerry@Latitude3520:~/Code/ros/ros2_action_ws$ ros2 launch py_launch_example example_substitutions_launch.py --show-args
 Arguments (pass arguments as '<name>:=<value>'):
 
@@ -188,4 +192,10 @@ Arguments (pass arguments as '<name>:=<value>'):
         no description given
         (default: '200')
 jerry@Latitude3520:~/Code/ros/ros2_action_ws$
+
+ros2 launch launch_tutorial example_substitutions_launch.py turtlesim_ns:='turtlesim3' use_provided_red:='True' new_background_r:=200
+
+
+***************************
+https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Launch/Using-Event-Handlers.html
 
