@@ -7,7 +7,7 @@ from launch.actions import (
     RegisterEventHandler,
     TimerAction,
 )
-from launch.conditions import Ifcondition
+from launch.conditions import IfCondition
 from launch.event_handlers import (
     OnExecutionComplete,
     OnProcessExit,
@@ -76,7 +76,7 @@ def generate_launch_description():
         shell=True,
     )
     change_background_r_conditioned = ExecuteProcess(
-        condition=Ifcondition(
+        condition=IfCondition(
             PythonExpression(
                 [
                     new_background_r,

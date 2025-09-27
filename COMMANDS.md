@@ -199,3 +199,33 @@ ros2 launch launch_tutorial example_substitutions_launch.py turtlesim_ns:='turtl
 ***************************
 https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Launch/Using-Event-Handlers.html
 
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$ colcon build --packages-select launch_tutorial
+Starting >>> launch_tutorial
+Finished <<< launch_tutorial [1.00s]          
+
+Summary: 1 package finished [1.12s]
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$ source install/setup.bash
+
+jerry@Latitude3520:~/Code/ros/ros2_action_ws$ ros2 launch launch_tutorial example_event_handlers_launch.py turtlesim_ns:='turtlesim3' use_provided_red:='True' new_background_r:=200
+[INFO] [launch]: All log files can be found below /home/jerry/.ros/log/2025-09-28-00-08-35-540829-Latitude3520-22088
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [turtlesim_node-1]: process started with pid [22101]
+[INFO] [launch.user]: Turtlesim started, spawning turtle
+[INFO] [Spawn '{x: 2, y: 2, theta: 0.2}'-2]: process started with pid [22102]
+[turtlesim_node-1] [INFO] [1758985715.769239092] [turtlesim3.sim]: Starting turtlesim with node name /turtlesim3/sim
+[turtlesim_node-1] [INFO] [1758985715.771692740] [turtlesim3.sim]: Spawning turtle [turtle1] at x=[5.544445], y=[5.544445], theta=[0.000000]
+[INFO] [launch.user]: Spawn request says "requester: making request: turtlesim.srv.Spawn_Request(x=2.0, y=2.0, theta=0.2, name='')"
+[turtlesim_node-1] [INFO] [1758985716.014931070] [turtlesim3.sim]: Spawning turtle [turtle2] at x=[2.000000], y=[2.000000], theta=[0.200000]
+[INFO] [launch.user]: Spawn request says "response:
+turtlesim.srv.Spawn_Response(name='turtle2')"
+[INFO] [Spawn '{x: 2, y: 2, theta: 0.2}'-2]: process has finished cleanly [pid 22102]
+[INFO] [launch.user]: Spawn finished
+[INFO] [sim background_r 120-3]: process started with pid [22135]
+[INFO] [sim background_r 120-3]: process has finished cleanly [pid 22135]
+[INFO] [sim background_r 200-4]: process started with pid [22179]
+[INFO] [sim background_r 200-4]: process has finished cleanly [pid 22179]
+
+
+***************************
+https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Launch/Using-ROS2-Launch-For-Large-Projects.html
+
